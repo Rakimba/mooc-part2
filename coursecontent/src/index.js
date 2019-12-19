@@ -15,14 +15,9 @@ const Course =({course})=> {
 
        const reducer = (acculator, currentValue)=> acculator+
                        currentValue
-        const newarray = course.parts.map(content=>content.exercises)
+       return (course.parts.map(content=>content.exercises)).reduce(reducer,0)
 
-        console.log(newarray)
-
-        const sum = newarray.reduce(reducer,0)
-
-        return sum
-                   
+       
     
     }
 
