@@ -11,11 +11,26 @@ const Course =({course})=> {
         return rows
     }
 
+    const total = ()=>{
+
+       const reducer = (acculator, currentValue)=> acculator+
+                       currentValue
+        const newarray = course.parts.map(content=>content.exercises)
+
+        console.log(newarray)
+
+        const sum = newarray.reduce(reducer,0)
+
+        return sum
+                   
+    
+    }
+
 return(
      <div>
       <h1> {course.name}</h1>
       {contents()}
-     
+      <p style ={{fontWeight : "bold"}}> total of {total()} exercises</p>
      </div>
 
 )
